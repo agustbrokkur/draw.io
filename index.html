@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>HTML5 Canvas</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="icon" data-shape="paint">
+      <i class="fa fa-paint-brush" aria-hidden="true"></i>
+    </div>
+    <div class="icon selected" data-shape="rectangle">
+      <i class="fa fa-square-o" aria-hidden="true"></i>
+    </div>
+    <div class="icon" data-shape="circle">
+      <i class="fa fa-circle-o" aria-hidden="true"></i>
+    </div>
+    <div class="icon" data-shape="line">
+      <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+    </div>
+    <div class="icon" data-shape="text">
+      <i class="fa fa-font" aria-hidden="true"></i>
+    </div>
+    <div class="icon" data-shape="move">
+      <i class="fa fa-mouse-pointer" aria-hidden="true"></i>
+    </div>
+  </nav>
+  <div class="container">
+    <canvas id="my-canvas" width="800" height="600">
+      Not supported
+    </canvas>
+  </div>
+  <nav class="optionbar">
+    <div class="option undo-select">
+      <button class="button redo">Redo</button></br>
+      <button class="button undo">Undo</button>
+    </div>
+    <div class="option">
+      Select Object Color: </br>
+      <input type="color" id="color-select">
+    </div>
+    <div class="option width-select">
+      Select Object Line-Width: </br>
+      <div class="slidecontainer">
+        <input type="range" min="1" max="30" value="5" class="slider" id="lineRange">
+        <p>Value: <span id="line-value"></span></p>
+      </div>
+    </div>
+    <div class="option fill-select">
+      <form>
+        Select Object Fill:<br>
+        <input type="radio" name="filled" id="fill" checked>Filled<br>
+        <input type="radio" name="filled" id="unfilled">Unfilled
+      </form>
+    </div>
+    <div class="option">
+      Input Text Here:</br>
+      <textarea id="text-select" rows="6" cols="30" white-space:"pre-wrap">Hello World</textarea>
+    </div>
+    <div class="option fontSize-select">
+      Select Text Font Size: </br>
+      <div class="slidecontainer">
+        <input type="range" min="1" max="72" value="12" class="slider" id="fontRange">
+        <p>Value: <span id="font-value"></span></p>
+      </div>
+    </div>
+  </nav>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js" charset="utf-8"></script>
+  <script src="shapes.js" charset="utf-8"></script>
+  <script src="drawio.js" charset="utf-8"></script>
+</body>
+
+</html>
